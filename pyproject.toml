@@ -33,3 +33,10 @@ dependencies = [
     # "pylatexenc==2.10",
     # "numpy>=2.0.2,<=2.2.2",
 ]
+
+[tool.setuptools]
+packages = ["bosonic"]
+
+[tool.setuptools-git-versioning]
+enabled = true
+
