@@ -5,7 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "Bosonic"
 version = "0.0.1"
-authors = [{ name = "Karoki Mugambi", email = "karokianthony.tphy@gmail.com" }]
+authors = [
+	{ name = "Karoki Mugambi", email = "karokianthony.tphy@gmail.com" }
+]
 description = "Bosonic GKP Qiskit simulator"
 readme = "README.md"
 requires-python = ">=3.13.1"
@@ -16,15 +18,15 @@ classifiers = [
     # "Programming Language :: Python :: 3.10",
     # "Programming Language :: Python :: 3.11",
     # "Programming Language :: Python :: 3.12",
-    # "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.13",
     "Operating System :: OS Independent",
 ]
 dependencies = [
-	"qiskit",
-	"qiskit-ibm-runtime",
-	"qiskit-aer",
-	"numpy",
-	"matplotlib",
+	"qiskit==1.3.2",
+	"qiskit-ibm-runtime==0.35.0",
+	"qiskit-aer==0.16.0",
+	"numpy==2.2.2",
+	"matplotlib==3.10.0",
     # "qiskit==1.3.2",
     # "qiskit-aer==0.16.0",
     # "qiskit-ibm-runtime==0.34.0",

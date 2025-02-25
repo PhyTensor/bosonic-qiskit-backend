@@ -1,0 +1,5 @@
+# To include all files and subdirectories within the my_package/directory_name directory
+# recursive-include my_package/directory_name *
+# To include a specific file in your package.
+# include  my_package/file_name
+

@@ -1,6 +1,6 @@
 from qiskit import ClassicalRegister, QuantumCircuit, QuantumRegister
 
-from bosonic.qumoderegister import QumodeRegister
+from bosonic import QumodeRegister
 
 
 class ContinuousVariableCircuit(QuantumCircuit):
