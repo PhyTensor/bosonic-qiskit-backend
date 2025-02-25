@@ -1,6 +1,29 @@
 from typing import Any
+
 from numpy import conjugate, ndarray, sqrt
-from scipy.sparse import coo_array, coo_matrix, csc_array, dia_array, dia_matrix, eye, spdiags, linalg
+from scipy.sparse import (coo_array, coo_matrix, csc_array, dia_array,
+                          dia_matrix, eye, linalg, spdiags)
+
+# class QOperators:
+#     """Base class for bosonic quantum operators"""
+#     def __init__(self, cutoff: int) -> None:
+#         self.cutoff: int = cutoff # serves as Hilbert space dimension
+#         # set the default operator that will be overwritten by subclasses
+#         self.operator: csc_array | csc_matrix | coo_array | coo_matrix | dia_array | dia_matrix = eye(m=self.cutoff, n=self.cutoff, dtype=complex)
+#
+#
+#     def as_matrix(self) -> ndarray:
+#         """Return the operator as a matrix."""
+#         return self.operator.toarray()
+#
+#
+# class IdentityOperator(QOperators):
+#     """Identity operator."""
+#     def __init__(self, cutoff: int) -> None:
+#         super().__init__(cutoff)
+#         # A Sparse matrix with 1 on the main diagonal and 0 elsewhere
+#         self.operator: csc_array | csc_matrix | coo_array | coo_matrix | dia_array | dia_matrix = eye(m=cutoff, n=cutoff)
+#
 
 
 class ContinuousVariableOperators:
@@ -59,6 +82,23 @@ class ContinuousVariableOperators:
         Returns:
             csc_matrix: The displacement operator matrix.
         """
-        arg: csc_array = (alpha * self.creation(cutoff)) - conjugate(alpha) * self.annihilation(cutoff)
+        a: csc_array = alpha * self.creation(cutoff)
+        a_dagger: csc_array = conjugate(alpha) * self.annihilation(cutoff)
+        arg: csc_array = a - a_dagger
         return linalg.expm(arg)
+
+    def squeezing_single(self, theta: float, cutoff: int) -> None:
+        """Single-mode Squeezing operator"""
+        pass
+
+
+    def squeezing_double(self, theta: float) -> None:
+        """Two-mode squeezing operator"""
+        pass
+
+
+    def squeezing_triple(self, theta: float) -> None:
+        """Three-mode squeezing operator"""
+        pass
+
 
