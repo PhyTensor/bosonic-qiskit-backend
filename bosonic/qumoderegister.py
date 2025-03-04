@@ -1,8 +1,12 @@
+import logging
+
 from qiskit import QuantumRegister
 from qiskit.circuit import Qubit
 
+logger = logging.getLogger(__name__)
 
 class QumodeRegister:
+
     def __init__(self, num_qumodes: int, num_qubits_per_qumode: int = 2, name: str = "q") -> None:
         """
         Initialise a QumodeRegister object.
@@ -20,6 +24,7 @@ class QumodeRegister:
         self.cutoff: int = 2**self.num_qubits_per_qumode
 
         self.quantum_register: QuantumRegister = QuantumRegister(size=self.size, name=self.name)
+        logger.info(f"Pass: QumodeRegister {self.name} created with {self.size} qubits.")
 
 
     @staticmethod

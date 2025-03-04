@@ -2,6 +2,8 @@ import bosonic.discretise
 import bosonic.kraus
 import bosonic.parameterised_unitary_gate
 import bosonic.util
+import bosonic.wigner
 from bosonic.circuit import ContinuousVariableCircuit
+from bosonic.logging_config import setup_global_logging
 from bosonic.operators import ContinuousVariableOperators
 from bosonic.qumoderegister import QumodeRegister
